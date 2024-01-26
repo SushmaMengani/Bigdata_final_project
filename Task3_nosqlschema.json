@@ -1,0 +1,82 @@
+// Task3 Collection Schema
+{
+  "_id": ObjectId,
+  "user": String,
+  "title": String,
+  "source": String,
+  "summary": String,
+  "createdAt": ISODate,
+  "annotations": [
+    {
+      "title": String,
+      "reference": String
+    }
+  ]
+}
+
+//Creating a database
+Use db covid_19
+// creating a collection
+Db.createCollections(“Task3”)
+// Inserting the data regarding post covid Issues
+db.Task3.insertOne({
+  "_id": ObjectId(),
+  "user": "Gagan_Garg",
+  "title": "Adverse effects after first and second dose of covishield and covaxin: A longitudinal study.",
+  "source": "https://pubmed.ncbi.nlm.nih.gov/?term=Garg%20G%5BAuthor%5D",
+  "summary": "COVID-19 vaccines' adverse effects study, evaluating occurrences and factors associated with covishield and covaxin doses in adults above 18 years.",
+  "createdAt": ISODate("2020-12-20T11:00:00Z")
+})
+db.Task3.insertOne({
+  "_id": ObjectId(),
+  "user": "Mitha",
+  "title": "Post COVID-19 sequelae: A prospective observational study from Northern India",
+  "source": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10041308/",
+  "summary": "Many people are having Heart Attacks due to Vaccinations in the North Part of India",
+  "createdAt": ISODate("2023-01-20T10:00:00Z")
+})
+db.Task3.insertOne({
+  "_id": ObjectId(),
+  "title": "The Global Economic Outlook During the COVID-19 Pandemic: A Changed World",
+  "source": "https://www.worldbank.org/en/news/feature/2020/06/08/the-global-economic-outlook-during-the-covid-19-pandemic-a-changed-world",
+  "summary": "The COVID-19 recession has seen the fastest, steepest downgrades in consensus growth projections among all global recessions since 1990.",
+  "createdAt": ISODate("2020-12-20T12:00:00Z")
+})
+// Global Economic Outlook Document
+db.Task3.insertOne({
+  "_id": ObjectId(),
+  "title": "Our coverage of global economics, from inflation-fighting central banks to apprehensive financial markets",
+  "source": "https://www.economist.com/economy",
+  "summary": "The global economy faces uncertainty, with inflation, central bank actions, and resilient economies worldwide. Explore the latest news and analysis for insights into current economic dynamics.",
+  "createdAt": ISODate("2024-01-20T12:00:00Z"),
+  "annotations": [
+    {"title": "US Economy", "reference": "https://www.economist.com/united-states/2024/01/14/why-are-americans-so-gloomy-about-their-great-economy"},
+    {"title": "Russia's Economy", "reference": "https://www.economist.com/finance-and-economics/2023/12/10/vladimir-putin-is-running-russias-economy-dangerously-hot"},
+    {"title": "Asia's Economy", "reference": "https://www.economist.com/leaders/2024/01/18/narendra-modis-illiberalism-may-imperil-indias-economic-progress"}
+  ]
+});
+// US Economy Document
+db.Task3.insertOne({
+  "_id": ObjectId(),
+  "title": "Why are Americans so gloomy about their great economy?",
+  "source": "https://www.economist.com/united-states/2024/01/14/why-are-americans-so-gloomy-about-their-great-economy",
+  "summary": "Inflation, partisanship, and the pandemic have made Americans gloomier than economic indicators suggest. Explore the reasons behind the sentiment.",
+  "createdAt": ISODate("2024-01-20T12:00:00Z")
+});
+// Russia's Economy Document
+db.Task3.insertOne({
+  "_id": ObjectId(),
+  "title": "Vladimir Putin is running Russia’s economy dangerously hot",
+  "source": "https://www.economist.com/finance-and-economics/2023/12/10/vladimir-putin-is-running-russias-economy-dangerously-hot",
+  "summary": "Extravagant war spending is fueling inflation, posing risks to Russia's economy. Explore the economic challenges and dangers.",
+  "createdAt": ISODate("2024-01-20T12:00:00Z")
+});
+// Asia's Economy Document
+db.Task3.insertOne({
+  "_id": ObjectId(),
+  "title": "Narendra Modi’s illiberalism may imperil India’s economic progress",
+  "source": "https://www.economist.com/leaders/2024/01/18/narendra-modis-illiberalism-may-imperil-indias-economic-progress",
+  "summary": "Fulfilling his great-power dream requires restraint, not abandon. Explore the challenges and potential risks to India's economic progress.",
+  "createdAt": ISODate("2024-01-20T12:00:00Z")
+});
+
